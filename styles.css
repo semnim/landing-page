@@ -26,12 +26,6 @@ body {
     text-align: center;
 }
 
-header {
-    font-size: 18px;
-    color: var(--secondary-text);
-    padding: 0 15% 100px;
-}
-
 
 /* Navbar */
 
@@ -39,8 +33,8 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 100px;
-    padding-top: 25px;
+    color: var(--secondary-text);
+    padding: 10px 15% 75px;
 }
 
 a,
@@ -48,39 +42,25 @@ a:visited {
     color: var(--secondary-text);
     text-decoration: none;
     padding: 10px;
+    font-size: 18px;
 }
 
 
 /* hero */
 
-#hero {
+#hero--section {
     display: flex;
     justify-content: space-between;
+    color: var(--secondary-text);
+    padding: 0 15% 100px;
 }
 
-#caption {
+#hero--caption {
+    display: flex;
+    flex-flow: column;
     flex: 1 1 50%;
     margin-right: 50px;
     text-align: left;
-}
-
-#caption p {
-    margin-bottom: 15px;
-    color: var(--secondary-text);
-}
-
-#img-placeholder {
-    background: grey;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 1 1 50%;
-}
-
-#img-placeholder p {
-    font-size: 24px;
-    color: var(--main-text);
-    text-align: center;
 }
 
 h1 {
@@ -90,23 +70,43 @@ h1 {
     font-weight: 800;
 }
 
+.secondary--text {
+    margin-bottom: 15px;
+    color: var(--secondary-text);
+    font-size: 18px;
+}
 
-/* Information */
+.signup--button {
+    width: 100px;
+    height: 25px;
+    align-self: flex-start;
+    background-color: var(--light-blue);
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
 
-section {
+#hero--img__placeholder {
+    background: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 0 50%;
+    font-size: 24px;
+    color: var(--main-text);
+    text-align: center;
+}
+
+
+/* Content Section */
+
+#content--section {
     display: flex;
     flex-flow: column;
     text-align: center;
     background-color: white;
     color: black;
     padding: 0 0 100px 0;
-}
-
-#information {
-    display: flex;
-    padding-right: auto;
-    flex: auto;
-    margin: auto;
 }
 
 h3 {
@@ -117,6 +117,13 @@ h3 {
     color: var(--dark-blue);
 }
 
+#box--wrapper {
+    display: flex;
+    padding-right: auto;
+    flex: auto;
+    margin: auto;
+}
+
 .box {
     display: flex;
     flex-flow: column;
@@ -124,7 +131,7 @@ h3 {
     margin: 0 20px;
 }
 
-.box div {
+.box--img__placeholder {
     align-self: center;
     border: 2px solid var(--light-blue);
     width: 150px;
@@ -132,7 +139,7 @@ h3 {
     border-radius: 10px;
 }
 
-.box p {
+.box--img__caption {
     font-size: 15px;
     flex: auto;
     max-width: 150px;
@@ -163,7 +170,12 @@ cite {
 
 /* Signup */
 
-#signup {
+#signup--section {
+    background-color: white;
+    padding: 0;
+}
+
+#signup--section__wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -171,35 +183,68 @@ cite {
     text-align: left;
     background-color: var(--light-blue);
     color: white;
-    margin: 100px 200px;
+    margin: 50px 100px;
     border-radius: 5px;
 }
 
-.signup-button {
-    width: 100px;
-    height: 25px;
-    align-self: center;
-    background-color: var(--light-blue);
-    color: white;
-    border: solid white;
-    border-radius: 5px;
-}
-
-#signup p {
+#cta--caption {
     font-size: 0.8rem;
     font-weight: 200;
 }
 
-blockquote+section {
-    padding: 0;
+.cta--button {
+    border: 1px solid white;
 }
 
 
 /* Footer */
 
-footer p {
-    padding: 25px;
+#footer--text {
+    padding: 30px;
     font-weight: 300;
-    font-size: 0.8rem;
-    max-height: 50px;
+    font-size: 15px;
+    max-height: 20px;
+}
+
+@media only screen and (max-width: 576px) {
+    #signup--caption__wrapper {
+        margin-right: 50px;
+    }
+    .signup--button {
+        margin: auto;
+        width: 100px;
+        height: 50px;
+    }
+    .cta--button {
+        width: 200px;
+        height: 100px;
+    }
+    #hero--caption {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #hero--img__placeholder {
+        display: none;
+    }
+    #box--wrapper {
+        flex-flow: column wrap;
+    }
+    .box {
+        margin-bottom: 20px;
+    }
+    #signup--section__wrapper {
+        margin: 30px 60px;
+    }
+    #cta--caption {
+        margin-right: 25px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    blockquote {
+        font-size: 18px;
+        padding: 75px 100px;
+    }
 }
