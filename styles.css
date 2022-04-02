@@ -207,6 +207,12 @@ cite {
 }
 
 @media only screen and (max-width: 576px) {
+    #header-links {
+        display: flex;
+    }
+    a {
+        white-space: nowrap;
+    }
     #signup--caption__wrapper {
         margin-right: 50px;
     }
